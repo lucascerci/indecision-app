@@ -1,6 +1,21 @@
 
 //react inforces the uppercase first letter, diferencia o react component de HTML elements
 
+class IndecisionApp extends React.Component {
+  render(){
+    return (
+      <div>
+        <Header/>
+        <Action/>
+        <Options/>
+        <AddOption/>
+      </div>
+    );
+  }
+}
+
+
+
 class Header extends React.Component {
   render() {
     return (
@@ -29,7 +44,19 @@ class Action extends React.Component {
         <div>
           <ul>
             <li>Option component here</li>
+            <Option/>
           </ul>
+        </div>
+      );
+    }
+  }
+
+  //Option -> Option component here
+  class Option extends React.Component {
+    render(){
+      return(
+        <div>
+          <p>Option Component ONE</p>
         </div>
       );
     }
@@ -46,13 +73,5 @@ class Action extends React.Component {
     }
   }
 
-const jsx = (
-  <div>
-    <Header/>
-    <Action/>
-    <Options/>
-    <AddOption/>
-  </div>
-);
 
-ReactDOM.render(jsx, document.getElementById('app'));
+ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
