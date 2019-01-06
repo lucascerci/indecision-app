@@ -1,4 +1,5 @@
 
+
 //react inforces the uppercase first letter, diferencia o react component de HTML elements
 
 class IndecisionApp extends React.Component {
@@ -47,8 +48,13 @@ class Action extends React.Component {
 
 // Options -> Options component here
   class Options extends React.Component {
+    constructor(props) {
+      super(props);
+      this.handleRemoveAll = this.handleRemoveAll.bind(this);
+    }
     handleRemoveAll() {
-      alert('all removed')
+      console.log(this.props.options);
+      // alert('all removed')
     }
     render(){
       return(
@@ -88,7 +94,7 @@ class Action extends React.Component {
       }
 
     }
-    
+
     render(){
       return(
         <div>
