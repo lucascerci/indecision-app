@@ -2,8 +2,7 @@ var React = require('react');
 var Modal = require('react-modal');
 
 
-const OptionModal = (props) => {
-    return(
+const OptionModal = (props) => (
         <Modal
             isOpen={!!props.selectedOption}
             onRequestClose={props.handleClearSelected}
@@ -14,6 +13,5 @@ const OptionModal = (props) => {
         <button onClick={props.handleClearSelected}>Okay</button>
         </Modal>
     );
-};
 
 export default OptionModal;
