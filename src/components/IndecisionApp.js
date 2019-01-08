@@ -1,15 +1,18 @@
 var React = require('react');
-
+var Modal = require('react-modal');
 
 import AddOption from './AddOption';
 import Options from './Options';
 import Action from './Action';
 import Header from './Header';
+import OptionModal from './OptionModal';
+
 // stateless functional component
 
 class IndecisionApp extends React.Component {
     state = {
-      options: []
+      options: [],
+      selectedOption: undefined
     };
     handleDeleteOptions = () => {
       this.setState(() => ({options: [] }));
@@ -22,7 +25,8 @@ class IndecisionApp extends React.Component {
     handlePick = () => {
       const randomNum = Math.floor(Math.random() * this.state.options.length);
       const option = this.state.options[randomNum];
-      alert(option);
+      //use setState to set selectOption
+      this.setState(() => ({selectedOption: option}));
     };
     handleAddOption = (option) => {
       if (!option) {
@@ -34,6 +38,10 @@ class IndecisionApp extends React.Component {
         options: prevState.options.concat([option])
       }));
     };
+    handleClearSelected = () => {
+      this.setState((prevState) => ({selectedOption: undefined}));
+    };
+    
     componentDidMount(){
       try {
         const json = localStorage.getItem('options');
@@ -75,6 +83,10 @@ class IndecisionApp extends React.Component {
           />
           <AddOption
             handleAddOption={this.handleAddOption}
+          />
+          <OptionModal
+            selectedOption={this.state.selectedOption}
+            handleClearSelected={this.handleClearSelected}
           />
         </div>
       );
