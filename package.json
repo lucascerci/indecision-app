@@ -6,13 +6,15 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --mode production --watch",
-    "serve": "live-server public/"
+    "serve": "live-server public/",
+    "dev-server": "webpack-dev-server"
   },
   "dependencies": {
     "live-server": "^1.2.1",
     "react": "16.7.0",
     "react-dom": "16.7.0",
-    "validator": "10.10.0"
+    "validator": "10.10.0",
+    "webpack-dev-server": "^3.1.14"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
