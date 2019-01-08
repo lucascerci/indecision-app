@@ -10,6 +10,7 @@
     "dev-server": "webpack-dev-server"
   },
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
     "live-server": "^1.2.1",
     "react": "16.7.0",
     "react-dom": "16.7.0",
